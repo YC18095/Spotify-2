@@ -20,7 +20,7 @@ export default async function middleWare(req) {
   }
 
   //if no token redirect back to login
-  // if (!token) {
+  if (!token) {
   //   return NextResponse.rewrite("http://localhost:3000/login");
     return NextResponse.rewrite("https://spotify-2-phi.vercel.app/login");
   }
