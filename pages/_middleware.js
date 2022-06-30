@@ -11,7 +11,8 @@ export default async function middleWare(req) {
   if (token && pathname.includes("/login")) {
     console.log("HAVE TOKEN");
     // return NextResponse.redirect("http://localhost:3000/");
-    return NextResponse.redirect("https://spotify-2-phi.vercel.app/");
+    // return NextResponse.redirect("https://spotify-2-phi.vercel.app/");
+    return NextResponse.redirect(process.env.NEXTAUTH_URL);
   }
 
   //if pathname include api/auth next
@@ -22,6 +23,7 @@ export default async function middleWare(req) {
   //if no token redirect back to login
   if (!token) {
   //   return NextResponse.rewrite("http://localhost:3000/login");
-    return NextResponse.rewrite("https://spotify-2-phi.vercel.app/login");
+    // return NextResponse.rewrite("https://spotify-2-phi.vercel.app/login");
+    return NextResponse.rewrite(process.env.NEXTAUTH_URL);
   }
 }

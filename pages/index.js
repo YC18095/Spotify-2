@@ -27,12 +27,12 @@ export default function Home() {
 }
 
 // Fix initial image of center playlist
-// export async function getServerSideProps(context) {
-//   const session = await getSession(context);
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
 
-//   return {
-//     props: {
-//       session,
-//     },
-//   };
-// }
+  return {
+    props: {
+      session,
+    },
+  };
+}
