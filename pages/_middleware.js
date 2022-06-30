@@ -24,6 +24,6 @@ export default async function middleWare(req) {
   if (!token) {
   //   return NextResponse.rewrite("http://localhost:3000/login");
     // return NextResponse.rewrite("https://spotify-2-phi.vercel.app/login");
-    return NextResponse.rewrite(`${process.env.NEXTAUTH_URL}/login`);
+    return NextResponse.rewrite(`${process.env.NEXTAUTH_URL}login`);
   }
 }
